@@ -1,3 +1,5 @@
+/* Special Features: #2 Hover Effects & Transitions, #3 Extra Responsive Breakpoint */
+
 /* Global styles */
 * {
     box-sizing: border-box;
@@ -56,6 +58,12 @@ body {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect transition */
+}
+
+.journal-entry:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 .entry-image {
@@ -65,11 +73,21 @@ body {
     box-shadow: 0 0 0 2px #333;
     padding: 8px;
     background: white;
+    transition: box-shadow 0.3s ease; /* Hover effect transition */
+}
+
+.entry-image:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
 }
 
 .entry-title {
     color: #333;
     margin-bottom: 10px;
+    transition: color 0.3s ease; /* Hover effect transition */
+}
+
+.entry-title:hover {
+    color: #4a90e2; /* Change color on hover */
 }
 
 .entry-date {
@@ -92,5 +110,25 @@ body {
     
     #sidebar {
         margin-bottom: 20px;
+    }
+}
+
+/* Special Feature #3: Extra Responsive Breakpoint */
+@media (max-width: 1024px) and (min-width: 769px) {
+    #main-container {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    #sidebar {
+        width: 30%; /* Adjust sidebar width for tablets */
+    }
+
+    #content-area {
+        width: 70%; /* Adjust content area width for tablets */
+    }
+
+    .journal-entry {
+        padding: 10px; /* Slightly reduce padding for smaller screens */
     }
 }
