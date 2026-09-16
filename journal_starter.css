@@ -1,112 +1,96 @@
-/* ============================================
-   HENRY'S JOURNAL - CSS POSITIONING EXERCISE
-   STARTER TEMPLATE - FILL IN THE BLANKS!
-   ============================================
-   
-   Complete the TODOs below to style the journal.
-   Refer to instructions for detailed guidance.
-   
-   Author: [Your Name Here]
-   Date: 02/02/2026
-============================================ */
-
-/* ============================================
-   STEP 1: BASE RESET & TYPOGRAPHY
-   ============================================ */
-
-   * {
+/* Global styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
+    font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-    padding: 20px;
 }
-
-/* ============================================
-   STEP 2: MAIN CONTAINER
-   ============================================
-   TODO: Add styles to create:
-   - White background
-   - Max width of 960px
-   - Center it horizontally
-   - Add padding and border radius
-============================================ */
 
 #main-container {
-    /* YOUR CODE HERE */
-    
+    width: 960px;
+    margin: 20px auto;
+    background: white;
 }
 
-/* ============================================
-   STEP 3: HEADER STYLING
-   ============================================
-   TODO: Style the header with padding,
-   background color, and text alignment
-============================================ */
-
+/* Step 2: Style Header & Basic Elements */
 #header-box {
-    /* YOUR CODE HERE */
-    
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-/* ============================================
-   STEP 4: CREATE TWO-COLUMN LAYOUT
-   ============================================
-   TODO: Use float to create sidebar (25%) 
-   and content area (75%)
-============================================ */
+#header-box h1 {
+    font-size: 2em;
+}
 
+/* Step 3: Create Two-Column Float Layout */
 #sidebar {
-    /* YOUR CODE HERE */
-    
+    float: left;
+    width: 25%;
+    padding: 20px;
+    background-color: #f0f0f0;
 }
 
 #content-area {
-    /* YOUR CODE HERE */
-    
+    float: left;
+    width: 75%;
+    padding: 20px;
 }
 
-/* ============================================
-   STEP 5: CLEARFIX FOR PARENT COLLAPSE
-   ============================================
-   TODO: Add clearfix to main-container
-============================================ */
-
+/* Step 4: Fix Parent Collapse with Clearfix */
 #main-container::after {
-    /* YOUR CODE HERE */
-    
+    content: "";
+    display: table;
+    clear: both;
 }
 
-/* ============================================
-   STEP 6: STYLE JOURNAL ENTRIES
-   ============================================
-   TODO: Add spacing, borders, and styling
-============================================ */
-
+/* Step 5: Style Journal Entries & Images */
 .journal-entry {
-    /* YOUR CODE HERE */
-    
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .entry-image {
-    /* YOUR CODE HERE */
-    /* Add picture frame effect */
-    
+    float: left;
+    margin-right: 15px;
+    border: 12px solid #fff;
+    box-shadow: 0 0 0 2px #333;
+    padding: 8px;
+    background: white;
 }
 
-/* ============================================
-   STEP 7: RESPONSIVE DESIGN
-   ============================================
-   TODO: Make layout stack on mobile
-============================================ */
+.entry-title {
+    color: #333;
+    margin-bottom: 10px;
+}
 
+.entry-date {
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* Step 6: Add Responsive Media Query */
 @media (max-width: 768px) {
-    /* YOUR CODE HERE */
+    #main-container {
+        width: 100%;
+        margin: 0;
+    }
     
+    #sidebar,
+    #content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    #sidebar {
+        margin-bottom: 20px;
+    }
 }
